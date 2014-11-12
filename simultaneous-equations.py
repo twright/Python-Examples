@@ -20,7 +20,7 @@ but this way is cleaner, and the matrix operations are easy to reuse (if this
 was for an interview, or otherwise timed, it would be quicker to forget
 abstraction and compress it all into a single class/function, with ). Of
 course, in practice, you would just use a library such as numpy for the
-matrices/vectors to avoid reinventing the wheel. 
+matrices/vectors to avoid reinventing the wheel.
 
 I have included 3 separate methods of solution:
  - Inverting the matrix via the 2x2 case of the Cayley-Hamilton
@@ -168,6 +168,7 @@ class LinearSystem:
 
     def flip_x_y(self):
         self.A.flip_x_y()
+        self.c.flip_x_y()
 
 
 class Vector:
@@ -436,7 +437,6 @@ class Matrix:
     def flip_x_y(self):
         self.u.flip_x_y()
         self.v.flip_x_y()
-        self.c.flip_x_y()
 
 
 if __name__ == '__main__':
